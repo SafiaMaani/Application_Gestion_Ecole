@@ -1,22 +1,15 @@
-/* Google Font Import - Poppins */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
 }
 
-
-/* ===== Sidebar ===== */
-
 .sidebar {
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 250px;
+    height: 88vh;
+    width: 15vw;
     padding: 10px 14px;
-    background: #5f8dfa;
+    background: #153F70;
 }
 
 .sidebar.close {
@@ -37,13 +30,13 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     font-size: 20px;
 }
 
 .sidebar .text,
 .sidebar .icon {
-    color: azure;
+    color: white;
 }
 
 .sidebar .text {
@@ -51,44 +44,12 @@
     font-weight: 500;
 }
 
-.sidebar header {
-    position: relative;
-}
-
-.sidebar header .image-text {
-    display: flex;
-    align-items: center;
-}
-
-.sidebar header .logo-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar header .image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sidebar header .image img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-.sidebar header .toggle {
-    position: absolute;
-    top: 50%;
-    right: -25px;
-    transform: translateY(-50%) rotate(180deg);
-    height: 25px;
-    width: 25px;
-    background-color: rgb(30, 99, 210);
-    color: rgb(253, 252, 250);
+.toggle {
+    height: 22px;
+    width: 22px;
+    background-color: white;
+    color: #153F70;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 22px;
     cursor: pointer;
 }
@@ -113,7 +74,7 @@
     height: calc(100% - 55px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     overflow-y: scroll;
 }
 
@@ -129,4 +90,45 @@
 
 ul {
     padding-left: 0px !important;
+}
+
+.navbar {
+    height: 12vh;
+    background: #153F70;
+}
+
+.search {
+    background-color: #1456A3;
+}
+
+.profil {
+    width: 12%;
+    border-radius: 50%;
+}
+
+.ajouter {
+    background-color: #1456A3;
+    width: 150px;
+    height: 35px;
+}
+
+.title {
+    color: #1456A3;
+}
+
+.head {
+    border-color: #1456A3 !important;
+}
+
+thead>tr {
+    background-color: #1456A3;
+}
+
+.students__table table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.students__table tr {
+    line-height: 25px;
 }
