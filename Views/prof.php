@@ -50,13 +50,26 @@
                                         <input class="mb-1" type="text" name="full_name">
 
                                         <label class="mb-1">Gender</label>
-                                        <input class="mb-1" type="text" name="gender">
+                                        <select name="gender">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
 
                                         <label class="mb-1">classe</label>
-                                        <input class="mb-1" type="text" name="classe">
-
+                                        <select name="classe">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
                                         <label class="mb-1">Matière</label>
-                                        <input class="mb-1" type="text" name="matiere">
+                                        <select name="matiere">
+                                            <option>Javascript</option>
+                                            <option>Php</option>
+                                            <option>Php's Frameworks</option>
+                                            <option>Java</option>
+                                            <option>Java's Frameworks</option>
+                                            <option>HTML/CSS/BOOTSRAP</option>
+                                        </select>
 
                                         <label class="mb-1">Phone</label>
                                         <input class="mb-1" type="text" name="phone">
@@ -100,7 +113,7 @@
                             <?php
 
                             $data = new ProfController();
-                            $profs= $data->getAllProf();
+                            $profs = $data->getAllProf();
 
                             foreach ($profs as $prof) : ?>
                                 <tr>
@@ -117,7 +130,7 @@
                                                 <i class="far fa-edit text-primary"></i>
                                             </button>
                                         </form>
-                                    
+
                                         <form method="post" class="mr-1" action="deleteProf">
                                             <input type="hidden" name="id_prof" value="<?php echo $prof['id_prof']; ?>">
                                             <button type="submit" name="delete" class="border border-0">
