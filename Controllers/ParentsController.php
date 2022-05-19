@@ -54,14 +54,22 @@ class ParentsController
 				'adresse' => $_POST['adresse'],
 				'phone' => $_POST['phone'],
 			);
-			var_dump($data);
 			$result = Parents::update($data);
+			if($result === 'ok'){
+				header('location:parents');
+			}
 			// if ($result === 'ok') {
 			// 	Session::set('success', 'Employé Modifié');
 			// 	Redirect::to('home');
 			// } else {
 			// 	echo $result;
 			// }
+		}
+	}
+	public function getOneId(){
+		if(isset($_POST['id_parent'])){
+			$result = Parents::getOne($_POST['id_parent']);
+			return $result;
 		}
 	}
 }

@@ -113,7 +113,7 @@
                                     <td class="d-flex justify-content-evenly">
                                         <form method="post" class="mr-1" action="updateProf">
                                             <input type="hidden" name="id_prof" value="<?php echo $prof['id_prof']; ?>">
-                                            <button type="submit"  class="border border-0 ">
+                                            <button type="submit" name="update" class="border border-0 ">
                                                 <i class="far fa-edit text-primary"></i>
                                             </button>
                                         </form>
