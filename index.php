@@ -4,18 +4,25 @@ require_once 'autoload.php';
 require_once 'Controllers/HomeController.php';
 
 $home = new HomeController();
-$user = new ParentsController();
+$parent = new ParentsController();
+$proffesseur = new ProfController();
 
 
 $pages = [
     'index',
-    'parents',
+    'dashbord',
     'students',
-    'admin',
     'prof',
+    'parents',
+    'admin',
+    'settings',
     '404',
     'deleteParent',
-    'updateParent'
+    'updateParent',
+    'deleteProf',
+    'updateProf',
+    'deleteStud',
+    'updateStud'
 ];
 
 if (isset($_GET['url'])) {
