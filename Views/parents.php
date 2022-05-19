@@ -50,10 +50,18 @@
                                         <input class="mb-1" type="text" name="full_name">
 
                                         <label class="mb-1">Gender</label>
-                                        <input class="mb-1" type="text" name="gender">
+                                        <select name="gender">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
 
                                         <label class="mb-1">Job</label>
-                                        <input class="mb-1" type="text" name="job">
+                                        <select name="job">
+                                            <option>Salarié</option>
+                                            <option>Fonctionnaire</option>
+                                            <option>Travail indépendant</option>
+                                            <option>Aucun</option>
+                                        </select>
 
                                         <label class="mb-1">Adresse</label>
                                         <input class="mb-1" type="text" name="adresse">
@@ -117,7 +125,7 @@
                                                 <i class="far fa-edit text-primary"></i>
                                             </button>
                                         </form>
-                                    
+
                                         <form method="post" class="mr-1" action="deleteParent">
                                             <input type="hidden" name="id_parent" value="<?php echo $parent['id_parent']; ?>">
                                             <button type="submit" name="delete" class="border border-0">
