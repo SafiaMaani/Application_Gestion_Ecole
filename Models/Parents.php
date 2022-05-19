@@ -38,19 +38,23 @@ class Parents
 
     static public function update($data)
     {
-        $query = 'UPDATE parents SET full_name= :full_name,gender=:gender,job=:job,adresse=:adresse,phone=:phone WHERE id=:id_parent';
+        $query = 'UPDATE parents SET full_name= :full_name,gender=:gender,job=:job,adresse=:adresse,phone=:phone WHERE id_parent=:id_parent';
         $stmt = DB::connexion()->prepare($query);
-        $stmt->bindParam(':id', $data['id_parent']);
+        $stmt->bindParam(':id_parent', $data['id_parent']);
         $stmt->bindParam(':full_name', $data['full_name']);
         $stmt->bindParam(':gender', $data['gender']);
         $stmt->bindParam(':job', $data['job']);
         $stmt->bindParam(':adresse', $data['adresse']);
-        $stmt->bindParam(':job', $data['job']);
-        
-        // if ($stmt->execute()) {
-        //     return 'ok';
-        // } else {
-        //     return 'error';
-        // }
+        $stmt->bindParam(':phone', $data['phone']);
+        if ($stmt->execute()) {
+            return 'ok';
+        }
+    }
+    static public function getOne($id)
+    {
+        $stmt = DB::connexion()->prepare("SELECT * FROM parents WHERE id_parent = '$id'");
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }

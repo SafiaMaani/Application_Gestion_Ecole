@@ -18,9 +18,6 @@ class ProfController
 				'matiere' => $_POST['matiere'],
 				'phone' => $_POST['phone'],
 			);
-			// echo '<pre>';
-			// var_dump($data);
-			// echo '</pre>';
 			$result = Prof::add($data);
 
 			// if($result === 'ok'){
@@ -43,25 +40,33 @@ class ProfController
 		}
 	}
 
-	public function updateParent()
+	public function updateProf()
 	{
-		if (isset($_POST['updateParent'])) {
+		if (isset($_POST['updateProf'])) {
 			$data = array(
-				'id_parent' => $_POST['id_parent'],
+				'id_prof' => $_POST['id_prof'],
 				'full_name' => $_POST['full_name'],
-				'job' => $_POST['job'],
 				'gender' => $_POST['gender'],
-				'adresse' => $_POST['adresse'],
+				'classe' => $_POST['classe'],
+				'matiere' => $_POST['matiere'],
 				'phone' => $_POST['phone'],
 			);
-			var_dump($data);
-			$result = Parents::update($data);
+			$result = Prof::update($data);
+			if($result === 'ok'){
+				header('location:prof');
+			}
 			// if ($result === 'ok') {
 			// 	Session::set('success', 'Employé Modifié');
 			// 	Redirect::to('home');
 			// } else {
 			// 	echo $result;
 			// }
+		}
+	}
+	public function getOneId(){
+		if(isset($_POST['id_prof'])){
+			$result = Prof::getOne($_POST['id_prof']);
+			return $result;
 		}
 	}
 }

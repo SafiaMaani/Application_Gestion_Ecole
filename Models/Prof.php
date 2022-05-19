@@ -38,19 +38,24 @@ class Prof
 
     static public function update($data)
     {
-        $query = 'UPDATE parents SET full_name= :full_name,gender=:gender,job=:job,adresse=:adresse,phone=:phone WHERE id=:id_parent';
+        $query = 'UPDATE proffesseurs SET full_name= :full_name,gender=:gender,matiere=:matiere,classe=:classe,phone=:phone WHERE id_prof=:id_prof';
         $stmt = DB::connexion()->prepare($query);
-        $stmt->bindParam(':id', $data['id_parent']);
+        $stmt->bindParam(':id_prof', $data['id_prof']);
         $stmt->bindParam(':full_name', $data['full_name']);
         $stmt->bindParam(':gender', $data['gender']);
-        $stmt->bindParam(':job', $data['job']);
-        $stmt->bindParam(':adresse', $data['adresse']);
-        $stmt->bindParam(':job', $data['job']);
+        $stmt->bindParam(':matiere', $data['matiere']);
+        $stmt->bindParam(':classe', $data['classe']);
+        $stmt->bindParam(':phone', $data['phone']);
         
-        // if ($stmt->execute()) {
-        //     return 'ok';
-        // } else {
-        //     return 'error';
-        // }
+        if ($stmt->execute()) {
+            return 'ok';
+        }
+    }
+    static public function getOne($id)
+    {
+        $stmt = DB::connexion()->prepare("SELECT * FROM proffesseurs WHERE id_prof = '$id'");
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
