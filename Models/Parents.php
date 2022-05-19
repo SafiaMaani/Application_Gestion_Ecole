@@ -19,12 +19,7 @@ class Parents
         $stmt->bindParam(':phone', $data['phone']);
         $stmt->bindParam(':job', $data['job']);
         $stmt->bindParam(':gender', $data['gender']);
-
-        // if ($stmt->execute()) {
-        //     return 'ok';
-        // } else {
-        //     return 'error';
-        // }
+        $stmt->execute();
     }
     static public function delete($data)
     {

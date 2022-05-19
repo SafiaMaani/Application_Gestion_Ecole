@@ -21,7 +21,7 @@ class ProfController
 			// echo '<pre>';
 			// var_dump($data);
 			// echo '</pre>';
-			$result = Parents::add($data);
+			$result = Prof::add($data);
 
 			// if($result === 'ok'){
 			// 	Session::set('success','Employé Ajouté');
@@ -32,13 +32,13 @@ class ProfController
 		}
 	}
 
-	public function deleteParent()
+	public function deleteProf()
 	{
 		if (isset($_POST['delete'])) {
-			$data['id_parent'] = $_POST['id_parent'];
-			$result = Parents::delete($data);
+			$data['id_prof'] = $_POST['id_prof'];
+			$result = Prof::delete($data);
 			if ($result === 'ok') {
-				header('Location:parents');
+				header('Location:prof');
 			}
 		}
 	}

@@ -19,20 +19,15 @@ class Prof
         $stmt->bindParam(':phone', $data['phone']);
         $stmt->bindParam(':classe', $data['classe']);
         $stmt->bindParam(':gender', $data['gender']);
-
-        // if ($stmt->execute()) {
-        //     return 'ok';
-        // } else {
-        //     return 'error';
-        // }
+        $stmt->execute();
     }
     static public function delete($data)
     {
-        $id = $data['id_parent'];
+        $id = $data['id_prof'];
         try {
-            $query = 'DELETE FROM parents WHERE id_parent=:id_parent';
+            $query = 'DELETE FROM proffesseurs WHERE id_prof=:id_prof';
             $stmt = DB::connexion()->prepare($query);
-            $stmt->execute(array(":id_parent" => $id));
+            $stmt->execute(array(":id_prof" => $id));
             if ($stmt->execute()) {
                 return 'ok';
             }
