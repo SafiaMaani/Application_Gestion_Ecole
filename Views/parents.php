@@ -11,144 +11,130 @@
 </head>
 
 <body>
+    <div>
+        <div>
+            <?php require_once "Includes/navbar.php"; ?>
+        </div>
 
-    <?php require_once "Includes/navbar.php"; ?>
-    <?php require_once "Includes/sidebar.php"; ?>
+        <div class="d-flex justify-content-around">
+            <div>
+                <?php require_once "Includes/sidebar.php"; ?>
+            </div>
+            <div class="body">
+                <div class="head d-flex justify-content-between align-items-center border-bottom border-3 pt-5 pb-2 mt-5">
+                    <h3 class="title">Listes des parents</h3>
+                    <!-- Button trigger modal -->
+                    <button class="ajouter text-white border-0 rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+                        </svg>
+                        Ajouter
+                    </button>
+                    <?php
+                    $add = new ParentsController();
+                    $add->addParent();
+                    ?>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-primary" id="exampleModalLabel">Ajouter les infos de parent</h5>
+                                    <form method="post" class="d-flex flex-column">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body d-flex flex-column">
+                                    <form method="post">
+                                        <label class="mb-1">Nom complet</label>
+                                        <input class="mb-1" type="text" name="full_name">
 
-    <div class="container-fluid page-container">
-        <div class="row page__content">
-            <div class="overlay"></div>
-            <div class="col p-0 page">
-                <main class="main">
-                    <div class="container">
-                        <div class="head d-flex justify-content-between align-items-center border-bottom border-3 py-4">
-                            <h3 class="title">Listes des parents</h3>
-                            <!-- Button trigger modal -->
-                            <button class="ajouter text-white border-0 rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
-                                </svg>
-                                Ajouter
-                            </button>
-                            <?php
-                            $add = new ParentsController();
-                            $add->addParent();
-                            ?>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-primary" id="exampleModalLabel">Ajouter les infos de parent</h5>
-                                            <form method="post" class="d-flex flex-column">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <label class="mb-1">Gender</label>
+                                        <input class="mb-1" type="text" name="gender">
+
+                                        <label class="mb-1">Job</label>
+                                        <input class="mb-1" type="text" name="job">
+
+                                        <label class="mb-1">Adresse</label>
+                                        <input class="mb-1" type="text" name="adresse">
+
+                                        <label class="mb-1">Phone</label>
+                                        <input class="mb-1" type="text" name="phone">
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" name="addParent" class="btn btn-primary" data-bs-dismiss="modal">
+                                                Ajouter le parent
+                                            </button>
                                         </div>
-                                        <div class="modal-body d-flex flex-column">
-                                            <form method="post">
-                                                <label class="mb-1">Nom complet</label>
-                                                <input class="mb-1" type="text" name="full_name">
-
-                                                <label class="mb-1">Gender</label>
-                                                <input class="mb-1" type="text" name="gender">
-
-                                                <label class="mb-1">Job</label>
-                                                <input class="mb-1" type="text" name="job">
-
-                                                <label class="mb-1">Adresse</label>
-                                                <input class="mb-1" type="text" name="adresse">
-
-                                                <label class="mb-1">Phone</label>
-                                                <input class="mb-1" type="text" name="phone">
-                                                
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" name="addParent" class="btn btn-primary" data-bs-dismiss="modal">
-                                                        Ajouter le parent
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="students">
-                            <div class="students__table  d-flex flex-column ">
-                                <section class="p-4">
-                                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                                        <div class="container  d-flex justify-content-between">
-                                            <div class="d-flex align-items-center mx-5">
-                                                <h5 class="me-2">Afficher</h5>
-                                                <input class="nav-link dropdown-toggle" type="number">
-                                                <h5 class="ms-2">entités</h5>
-                                            </div>
-                                            <div class="mx-5">
-                                                <form class="float-right mb-2 d-flex flex-row">
-                                                    <input type="text" class="form-control" name="search" placeholder="Recherche">
-                                                    <button class="btn btn-info btn-sm" name="find"><i class="fas fa-search"></i></button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </nav>
-                                </section>
-                                <table class="table table-responsive">
-                                    <thead class=" mb-1 bg-primary">
-                                        <tr class="text-muted">
-                                            <th class="text-white">Matricule <i class="fas fa-sort fs-4 ms-auto text-white"></i></th>
-                                            <th class="text-white">Nom complet <i class="fas fa-sort fs-4 ms-auto text-white"></i></th>
-                                            <th class="text-white">Genre <i class="fas fa-sort fs-4 ms-auto text-white"></i></th>
-                                            <th class="text-white">Job <i class="fas fa-sort fs-4 ms-auto text-white"></i></th>
-                                            <th class="text-white">Address <i class="fas fa-sort fs-4 ms-auto text-white"></i></th>
-                                            <th class="text-white">Phone<i class="fas fa-sort fs-4 ms-auto text-white"></i></th>
-                                            <th class="text-white" colspan="2">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-
-                                        $data = new ParentsController();
-                                        $parents = $data->getAllParents();
-
-                                        foreach ($parents as $parent) : ?>
-                                            <tr class="bg-light">
-                                                <td><?= $parent['id_parent'] ?></td>
-                                                <td><?= $parent['full_name'] ?></td>
-                                                <td><?= $parent['gender'] ?></td>
-                                                <td><?= $parent['job'] ?></td>
-                                                <td><?= $parent['adresse'] ?></td>
-                                                <td><?= $parent['phone'] ?></td>
-                                                <td>
-                                                    <form method="post" class="mr-1" action="updateParent">
-                                                        <input type="hidden" name="id_parent" value="<?php echo $parent['id_parent']; ?>">
-                                                        <button type="submit" name="updateParent" class="border border-0">
-                                                            <i class="far fa-edit text-primary"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
-                                                <td>
-                                                    <form method="post" class="mr-1" action="delete">
-                                                        <input type="hidden" name="id_parent" value="<?php echo $parent['id_parent']; ?>">
-                                                        <button type="submit" name="delete" class="border border-0">
-                                                            <i class="far fa-trash text-danger"></i>
-                                                        </button>
-                                                    </form>
-                                                </td>
-                                            </tr><br>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div>
-                            </div>
+                    </div>
+                </div>
+                <div class="students__table  d-flex flex-column ">
+                    <div class="text-primary py-2  d-flex justify-content-between">
+                        <div class="d-flex align-items-center ">
+                            <h5 class="me-2">Afficher</h5>
+                            <input class="nav-link dropdown-toggle w-25 border-primary" type="number">
+                            <h5 class="ms-2">entités</h5>
                         </div>
-                </main>
+                        <div class="d-flex justify-content-center">
+                            <input type="text" class="form-control border-primary" name="search" placeholder="Recherche">
+                        </div>
+                    </div>
+                    <table class="table table-responsive table-borderless">
+                        <thead>
+                            <tr class="text-white">
+                                <th>Matricule <i class="fas fa-sort fs-4 ms-auto"></i></th>
+                                <th>Nom complet <i class="fas fa-sort fs-4 ms-auto"></i></th>
+                                <th>Genre <i class="fas fa-sort fs-4 ms-auto"></i></th>
+                                <th>Job <i class="fas fa-sort fs-4 ms-auto"></i></th>
+                                <th>Address <i class="fas fa-sort fs-4 ms-auto"></i></th>
+                                <th>Phone<i class="fas fa-sort fs-4 ms-auto"></i></th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+
+                            $data = new ParentsController();
+                            $parents = $data->getAllParents();
+
+                            foreach ($parents as $parent) : ?>
+                                <tr>
+                                    <td><?= $parent['id_parent'] ?></td>
+                                    <td><?= $parent['full_name'] ?></td>
+                                    <td><?= $parent['gender'] ?></td>
+                                    <td><?= $parent['job'] ?></td>
+                                    <td><?= $parent['adresse'] ?></td>
+                                    <td><?= $parent['phone'] ?></td>
+                                    <td class="d-flex justify-content-evenly">
+                                        <form method="post" class="mr-1" action="updateParent">
+                                            <input type="hidden" name="id_parent" value="<?php echo $parent['id_parent']; ?>">
+                                            <button type="submit"  class="border border-0 ">
+                                                <i class="far fa-edit text-primary"></i>
+                                            </button>
+                                        </form>
+                                    
+                                        <form method="post" class="mr-1" action="deleteParent">
+                                            <input type="hidden" name="id_parent" value="<?php echo $parent['id_parent']; ?>">
+                                            <button type="submit" name="delete" class="border border-0">
+                                                <i class="far fa-trash text-danger"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                </div>
             </div>
         </div>
     </div>
-
-
     <!-- SCRIPT -->
     <script src="./Script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
