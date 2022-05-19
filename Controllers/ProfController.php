@@ -1,21 +1,21 @@
 <?php
 
-class ParentsController
+class ProfController
 {
-	public function getAllParents()
+	public function getAllProf()
 	{
-		$parents = Parents::getAll();
-		return $parents;
+		$prof = Prof::getAll();
+		return $prof;
 	}
 
-	public function addParent()
+	public function addProf()
 	{
-		if (isset($_POST['addParent'])) {
+		if (isset($_POST['addProf'])) {
 			$data = array(
 				'full_name' => $_POST['full_name'],
 				'gender' => $_POST['gender'],
-				'job' => $_POST['job'],
-				'adresse' => $_POST['adresse'],
+				'classe' => $_POST['classe'],
+				'matiere' => $_POST['matiere'],
 				'phone' => $_POST['phone'],
 			);
 			// echo '<pre>';

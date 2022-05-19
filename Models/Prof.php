@@ -1,10 +1,10 @@
 <?php
 
-class Parents
+class Prof
 {
     static public function getAll()
     {
-        $stmt = DB::connexion()->prepare('SELECT * FROM parents');
+        $stmt = DB::connexion()->prepare('SELECT * FROM proffesseurs');
         $stmt->execute();
 
         return $stmt->fetchAll();
@@ -12,12 +12,12 @@ class Parents
 
     static public function add($data)
     {
-        $stmt = DB::connexion()->prepare('INSERT INTO parents (full_name,adresse,phone,job,gender)
-        VALUES (:full_name,:adresse,:phone,:job,:gender)');
+        $stmt = DB::connexion()->prepare('INSERT INTO proffesseurs (full_name,matiere,phone,classe,gender)
+        VALUES (:full_name,:matiere,:phone,:classe,:gender)');
         $stmt->bindParam(':full_name', $data['full_name']);
-        $stmt->bindParam(':adresse', $data['adresse']);
+        $stmt->bindParam(':matiere', $data['matiere']);
         $stmt->bindParam(':phone', $data['phone']);
-        $stmt->bindParam(':job', $data['job']);
+        $stmt->bindParam(':classe', $data['classe']);
         $stmt->bindParam(':gender', $data['gender']);
 
         // if ($stmt->execute()) {
