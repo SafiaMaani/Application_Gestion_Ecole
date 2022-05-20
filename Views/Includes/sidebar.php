@@ -30,7 +30,7 @@
                     </a>
                 </li>
                 <li class="nav-link">
-                    <a href="users">
+                    <a href="admin">
                         <i class="fas fa-users"></i>
                         <span class="text nav-text">Utilisateurs</span>
                     </a>
