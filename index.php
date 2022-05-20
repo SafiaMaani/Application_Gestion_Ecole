@@ -1,22 +1,17 @@
 <?php
 
 require_once 'autoload.php';
-require_once 'Controllers/HomeController.php';
 
 $home = new HomeController();
-$parent = new ParentsController();
-$proffesseur = new ProfController();
-
 
 $pages = [
     'index',
-    'dashbord',
+    'dashboard',
     'students',
     'prof',
     'parents',
     'admin',
     'settings',
-    '404',
     'deleteParent',
     'updateParent',
     'deleteProf',
