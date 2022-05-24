@@ -17,7 +17,8 @@ $pages = [
     'deleteProf',
     'updateProf',
     'deleteStud',
-    'updateStud'
+    'updateStud',
+    'Login'
 ];
 
 if (isset($_GET['url'])) {

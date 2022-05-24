@@ -1,0 +1,61 @@
+/* ---- reset ---- */
+*{
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  margin:0;
+  font: normal 16px Arial, Helvetica, sand-serif;
+}
+
+#particles-js{
+  background:#133358;
+  left: 0%;
+  top: 0;
+  height:100vh;
+  width: 100%;
+  position: absolute;
+  z-index:-1;
+}
+
+.form-control{
+  border:0;
+  border-bottom: 3px solid #2480EA;
+}
+
+p{
+  font-size: 12px;
+}
+
+.bienvenu{
+  font-size: 16px;
+}
+
+.btn{
+  background-color:#2480EA;
+}
+
+.form-label{
+  font-size: 15px;
+}
+
+.formulaire{
+  border-radius:20px 0 0 20px;
+}
+
+#checkpassword{
+  font-size: 12px;
+}
+
+#emailavailblty{
+  font-size: 12px;
+}
+
+@media only screen and (max-width:767px) {
+  
+  .formulaire{
+    border-radius:20px;
+    min-height: 500px;
+  }
+
+  
+}
