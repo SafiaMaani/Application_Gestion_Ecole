@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="Views/Assets/style.css">
+    <link rel="shortcut icon" href="Views/Assets/image/favion.png" type="image/x-icon">
+    <link rel="stylesheet" href="Views/Assets/css/style.css">
+    <link rel="stylesheet" href="Views/Assets/css/dashboard.css">
     <title>Parents</title>
 </head>
 
@@ -16,11 +19,11 @@
             <?php require_once "Includes/navbar.php"; ?>
         </div>
 
-        <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-between">
             <div>
                 <?php require_once "Includes/sidebar.php"; ?>
             </div>
-            <div class="body">
+            <div class="body me-5">
                 <div class="head d-flex justify-content-between align-items-center border-bottom border-3 pt-5 pb-2 mt-5">
                     <h3 class="title">Listes des parents</h3>
                     <!-- Button trigger modal -->

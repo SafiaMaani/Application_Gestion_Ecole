@@ -9,7 +9,8 @@ function autoload($class_name)
     $paths = [
         'Controllers/',
         'Database/',
-        'Models/'
+        'Models/',
+        'Helpers/'
     ];
     foreach ($paths as $path) {
         $file = sprintf($path . '%s.php', $class_name);
